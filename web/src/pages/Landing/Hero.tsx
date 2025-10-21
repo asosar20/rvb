@@ -13,16 +13,16 @@ const Hero = () => {
         <section
             id="inicio"
             className="min-h-screen bg-[#F3F9F5] w-full flex lg:flex-row flex-col items-center justify-center px-8 gap-8 lg:pt-8 pt-10 pb-2">
-                <div className="lg:w-1/2 w-full">
+                <div className="lg:w-1/2 w-full text-right">
                     
-                    <Title className="pt-8"> Tu nuevo hogar a solo 10 minutos de Pimentel</Title>
+                    <Title className="pt-8 font-title"> Tu nuevo hogar a solo 10 minutos de Pimentel</Title>
 
                     <p className="text-md md:text-lg text-[#364153] pt-8">
                         Casas y departamentos modernos diseñados para brindarte comodidad,
                         seguridad y una ubicación privilegiada cerca del mar.
                     </p>
 
-                    <div className="grid grid-cols-3 gap-4 text-shadow-2x pt-8 md:text-lg text-sm">
+                    <div className="grid grid-cols-3 gap-4 text-shadow-2x pt-8 lg:text-lg text-sm font-body px-16">
 
                         <div className="flex flex-col items-center justify-center bg-[#0F70B7] rounded-xl shadow-md p-2 text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
                             <MapPin className="text-[#f3f4f6]" size={28} />
@@ -48,7 +48,7 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center pt-8 gap-4 md:text-lg text-sm">
+                    <div className="flex items-center justify-center pt-8 gap-4 md:text-lg text-sm font-button">
                       <Button href="#contacto">Agenda tu visita</Button>
                       <Button variant="outline" href="#proyectos">Ver proyectos</Button>
                     </div>

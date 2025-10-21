@@ -124,7 +124,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex bg-[#0F70B7] text-[#ffffff] px-10 py-4 rounded-lg font-medium transition-transform duration-300 hover:scale-105 disabled:opacity-60"
+                className="inline-flex bg-[#0F70B7] text-[#ffffff] px-10 py-4 rounded-lg font-medium font-button transition-transform duration-300 hover:scale-105 disabled:opacity-60"
               >
                 {loading ? "Enviando..." : "Solicitar información"}
               </button>

@@ -64,7 +64,7 @@ const Testimonials = () => {
                 
                 <SubTitle>Lo que dicen nuestros clientes</SubTitle>
 
-                <div className="relative overflow-hidden w-full h-auto lg:pt-2">
+                <div className="relative overflow-hidden w-full h-auto lg:pt-10">
                     <div
                         className="flex transition-transform duration-700"
                         style={{ transform: `translateX(-${current * 100}%)` }}
@@ -98,7 +98,7 @@ const Testimonials = () => {
                     </div>
 
                     {/* Indicadores */}
-                    <div className="flex justify-center mt-2 mb-10 space-x-2">
+                    <div className="flex justify-center mt-10 mb-10 space-x-2">
                         {testimonialsData.map((_, i) => (
                             <button
                                 key={i}

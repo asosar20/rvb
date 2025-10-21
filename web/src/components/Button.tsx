@@ -1,5 +1,6 @@
 // src/components/Button.tsx
 import type { ReactNode, MouseEventHandler } from "react";
+import { Link } from "react-router-dom";
 
 type ButtonProps = {
   children: ReactNode;
@@ -23,7 +24,7 @@ export default function Button({
   const variants = {
     primary: "bg-[#0F70B7] text-[#f3f4f6]",
     secondary: "bg-[#F6B800] text-[#f3f4f6]",
-    outline: "border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-white",
+    outline: "border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff]",
   };
 
   const finalClassName = `${baseStyles} ${variants[variant]} ${className}`;
@@ -31,14 +32,14 @@ export default function Button({
   if (href) {
     const isExternal = href.startsWith("http");
     return (
-      <a
-        href={href}
+      <Link
+        to={href}
         className={finalClassName}
         target={target || (isExternal ? "_blank" : "_self")}
         rel={isExternal ? "noopener noreferrer" : undefined}
       >
         {children}
-      </a>
+      </Link>
     );
   }
 

@@ -51,7 +51,7 @@ export default function AboutUs() {
                     <p className="text-[#101828] font-semibold mb-4">
                         <span className="font-bold">{horario.etiqueta}</span> {horario.valor}
                     </p>
-                    <Button variant="primary" href={telefono.numero}  className="flex items-center justify-center gap-2 lg:w-fit">
+                    <Button variant="primary" href={telefono.numero}  className="flex items-center font-numbers justify-center gap-2">
                         <Phone size={18} />
                         Llamar al: {telefono.numero}
                     </Button>
@@ -62,7 +62,7 @@ export default function AboutUs() {
                     {tarjetas.map((tarjeta) => (
                         <div
                             key={tarjeta.id}
-                            className="bg-[#ffffff] p-6 rounded-xl shadow-md flex flex-col items-center justify-center text-center"
+                            className="bg-[#ffffff] p-6 rounded-xl shadow-md flex flex-col items-center justify-between text-center"
                         >
                             {tarjeta.icono === "Building2" && (
                                 <Building2 className="h-10 w-10 mb-3 text-[#1e2939]" />
@@ -76,7 +76,7 @@ export default function AboutUs() {
                                 href={tarjeta.enlace}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff] px-4 py-2 rounded-md transition flex items-center gap-2"
+                                className="border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff] px-4 py-2 rounded-md transition flex items-center gap-2 font-button"
                             >
                                 <MapPinHouse className="w-5 h-5" />
                                 {tarjeta.textoBoton}

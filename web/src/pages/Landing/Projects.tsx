@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import {useRef, useState } from "react";
 import SubTitle from "../../components/SubTitle";
+import Button from "../../components/Button";
 
 // Tipos base
 interface Imagen {
@@ -228,7 +229,7 @@ const Projects = () => {
             <button
               key={btn.id}
               onClick={() => setTipoCasa(btn.id as "2pisos" | "1piso")}
-              className={`border px-6 py-4 rounded-xl font-button transition-colors duration-300 cursor-pointer
+              className={`border px-6 py-4 rounded-xl font-numbers transition-colors duration-300 cursor-pointer
                 ${tipoCasa === btn.id
                   ? "bg-[#0F70B7] text-white border-[#0F70B7]"
                   : "border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-white"}`}
@@ -261,12 +262,7 @@ const Projects = () => {
                   </span>
                 </div>
                 <div className="flex items-center justify-center">
-                  <a
-                    href="#contacto"
-                    className="bg-[#0F70B7] text-[#ffffff] px-8 py-3 shadow-2xl rounded-lg font-semibold font-button hover:bg-[#0d5e98] transition text-center"
-                  >
-                    Me interesa
-                  </a>
+                  <Button href="#contact">Me interesa</Button>
                 </div>
               </div>
             </div>
@@ -314,12 +310,7 @@ const Projects = () => {
                     </span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <a
-                      href="#contacto"
-                      className="bg-[#0F70B7] text-[#ffffff] px-8 py-3 shadow-2xl rounded-lg font-semibold font-button hover:bg-[#0d5e98] transition text-center"
-                    >
-                      Me interesa
-                    </a>
+                    <Button href="#contact">Me interesa</Button>
                   </div>
                 </div>
               </div>
