@@ -23,7 +23,7 @@ const Hero = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="lg:w-1/2 w-full text-right"
+        className="lg:w-1/2 w-full lg:text-right text-center"
       >
         <Title className="pt-8 font-title">
           Tu nuevo hogar a solo 10 minutos de Pimentel
