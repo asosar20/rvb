@@ -82,6 +82,7 @@ export default function Contact() {
                   TELÉFONO <span className="text-[#fb2c36]">*</span>
                 </label>
                 <input
+                  type="tel"
                   {...register("telefono")}
                   className="w-full mt-1 p-3 border border-[#d1d5db] rounded-lg text-[#101828] focus:ring-2 focus:ring-[#0F70B7] outline-none"
                   placeholder="9XXXXXXXX"
@@ -96,6 +97,7 @@ export default function Contact() {
                   DNI <span className="text-[#fb2c36]">*</span>
                 </label>
                 <input
+                  type="tel"
                   {...register("dni")}
                   className="w-full mt-1 p-3 border border-[#d1d5db] rounded-lg text-[#101828] focus:ring-2 focus:ring-[#0F70B7] outline-none"
                   placeholder="8 dígitos"
