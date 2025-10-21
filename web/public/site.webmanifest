@@ -1,0 +1,31 @@
+{
+    "name": "RVB Constructora",
+    "short_name": "RVB",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4f46e5",
+    "icons": [
+        {
+            "src": "/logo16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo152x152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        }
+    ]
+
+}
