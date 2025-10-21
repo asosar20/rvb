@@ -71,7 +71,7 @@ const Footer = () => {
           <h4 className="font-semibold text-[#f3f4f6] text-lg">
             Agenda tu visita
           </h4>
-          <Button href="#contacto">Contáctanos</Button>
+          <Button href="#contact">Contáctanos</Button>
         </div>
       </div>
 
