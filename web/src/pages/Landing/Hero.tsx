@@ -12,7 +12,7 @@ const Hero = () => {
     return (
         <section
             id="inicio"
-            className="min-h-screen bg-[#F3F9F5] w-full flex lg:flex-row flex-col items-center justify-center px-8 gap-8 lg:pt-8 pt-16 pb-2">
+            className="min-h-screen bg-[#F3F9F5] w-full flex lg:flex-row flex-col items-center justify-center px-8 gap-8 lg:pt-8 pt-10 pb-2">
                 <div className="lg:w-1/2 w-full">
                     
                     <Title className="pt-8"> Tu nuevo hogar a solo 10 minutos de Pimentel</Title>
