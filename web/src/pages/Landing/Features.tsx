@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import SubTitle from "../../components/SubTitle";
+import type { Variants } from "framer-motion";
 
 const features = [
   {
@@ -69,13 +70,13 @@ const features = [
   },
 ];
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (custom: number = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.1,
+      delay: custom * 0.2,
       duration: 0.6,
       ease: "easeOut",
     },
@@ -95,14 +96,13 @@ const Features = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {features.map((b, index) => (
             <motion.div
-              key={index}
-              className="bg-[#ffffff] w-full max-w-sm rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-8 text-center"
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              custom={index}
-              whileHover={{ scale: 1.04, transition: { duration: 0.25 } }}
+                key={index}
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-8 text-center"
             >
               <motion.div
                 className="w-14 h-14 flex items-center justify-center bg-[#0F70B7] text-[#ffffff] rounded-full mx-auto mb-4 shadow"
