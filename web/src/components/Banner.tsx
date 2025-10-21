@@ -13,7 +13,7 @@ const Banner = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
       >
-        <div className="flex-1 flex flex-col items-start md:items-start gap-3">
+        <div className="flex-1 flex flex-col items-center md:items-start gap-3">
           <motion.span
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
