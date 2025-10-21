@@ -1,5 +1,8 @@
 import { MapPinHouse, Building2, Phone, Map } from "lucide-react";
 import SubTitle from "../../components/SubTitle";
+import { motion} from "framer-motion";
+import type { Variants, Transition } from "framer-motion";
+
 const aboutUsData = {
   titulo: "Tu futuro hogar te espera aquí",
   horarioTexto: "Oficina de ventas de lunes a domingo.",
@@ -35,69 +38,93 @@ const aboutUsData = {
   },
 };
 
+const transition: Transition = { duration: 0.6, ease: [0.42, 0, 0.58, 1] };
+
+const containerVariants: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition },
+};
+
 export default function AboutUs() {
-    const { titulo, horarioTexto, horario, telefono, tarjetas, mapa } = aboutUsData;
+  const { titulo, horarioTexto, horario, telefono, tarjetas, mapa } = aboutUsData;
 
-    return (
-        <section id="aboutUs" data-aos="fade-up" className="bg-[#F4FAF7] lg:pt-12 pt-2 lg:pb-12 pb-12 text-center">
-            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8">
-                {/* ENCABEZADO */}
-                <div className="text-center lg:text-left px-8 lg:px-0 flex flex-col justify-center">
-                    
-                    <SubTitle>{titulo}</SubTitle>
+  return (
+    <motion.section
+      id="aboutUs"
+      data-aos="fade-up"
+      className="bg-[#F4FAF7] lg:pt-12 pt-2 lg:pb-12 pb-12 text-center"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
+      <motion.div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8">
+        {/* ENCABEZADO */}
+        <motion.div className="text-center lg:text-left px-8 lg:px-0 flex flex-col justify-center" variants={itemVariants}>
+          <motion.div variants={itemVariants}>
+            <SubTitle>{titulo}</SubTitle>
+          </motion.div>
 
-                    <p className="text-[#364153] mb-1">{horarioTexto}</p>
-                    <p className="text-[#101828] font-semibold mb-4">
-                        <span className="font-bold">{horario.etiqueta}</span> {horario.valor}
-                    </p>
-                    <a className="flex items-center font-numbers justify-center gap-2 px-6 py-4 font-bold shadow-xl rounded-xl transition-transform duration-300 hover:scale-105 cursor-pointer bg-[#0F70B7] text-[#f3f4f6] lg:w-fit">
-                        <Phone size={18} />
-                        Llamar al: {telefono.numero}
-                    </a>
-                </div>
+          <motion.p className="text-[#364153] mb-1" variants={itemVariants}>
+            {horarioTexto}
+          </motion.p>
+          <motion.p className="text-[#101828] font-semibold mb-4" variants={itemVariants}>
+            <span className="font-bold">{horario.etiqueta}</span> {horario.valor}
+          </motion.p>
+          <motion.a
+            href={telefono.enlace}
+            className="flex items-center font-numbers justify-center gap-2 px-6 py-4 font-bold shadow-xl rounded-xl transition-transform duration-300 hover:scale-105 cursor-pointer bg-[#0F70B7] text-[#f3f4f6] lg:w-fit"
+            variants={itemVariants}
+          >
+            <Phone size={18} />
+            Llamar al: {telefono.numero}
+          </motion.a>
+        </motion.div>
 
-                {/* TARJETAS */}
-                <div className="grid lg:grid-cols-2 gap-6 px-8 lg:mt-16">
-                    {tarjetas.map((tarjeta) => (
-                        <div
-                            key={tarjeta.id}
-                            className="bg-[#ffffff] p-6 rounded-xl shadow-md flex flex-col items-center justify-between text-center"
-                        >
-                            {tarjeta.icono === "Building2" && (
-                                <Building2 className="h-10 w-10 mb-3 text-[#1e2939]" />
-                            )}
-                            {tarjeta.icono === "Map" && (
-                                <Map className="h-10 w-10 mb-3 text-[#1e2939]" />
-                            )}
-                            <h3 className="font-bold text-lg mb-1">{tarjeta.titulo}</h3>
-                            <p className="text-[#4a5565] mb-4">{tarjeta.direccion}</p>
-                            <a
-                                href={tarjeta.enlace}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff] px-4 py-2 rounded-md transition flex items-center gap-2 font-button"
-                            >
-                                <MapPinHouse className="w-5 h-5" />
-                                {tarjeta.textoBoton}
-                            </a>
-                        </div>
-                    ))}
-                </div>
-            </div>
+        {/* TARJETAS */}
+        <motion.div className="grid lg:grid-cols-2 gap-6 px-8 lg:mt-16">
+          {tarjetas.map((tarjeta) => (
+            <motion.div
+              key={tarjeta.id}
+              className="bg-[#ffffff] p-6 rounded-xl shadow-md flex flex-col items-center justify-between text-center"
+              variants={itemVariants}
+            >
+              {tarjeta.icono === "Building2" && <Building2 className="h-10 w-10 mb-3 text-[#1e2939]" />}
+              {tarjeta.icono === "Map" && <Map className="h-10 w-10 mb-3 text-[#1e2939]" />}
+              <h3 className="font-bold text-lg mb-1">{tarjeta.titulo}</h3>
+              <p className="text-[#4a5565] mb-4">{tarjeta.direccion}</p>
+              <a
+                href={tarjeta.enlace}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff] px-4 py-2 rounded-md transition flex items-center gap-2 font-button"
+              >
+                <MapPinHouse className="w-5 h-5" />
+                {tarjeta.textoBoton}
+              </a>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
 
-            {/* MAPA */}
-            <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg pt-10">
-                <iframe
-                    src={mapa.src}
-                    title={mapa.titulo}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-            </div>
-        </section>
-    );
+      {/* MAPA */}
+      <motion.div className="w-full h-96 rounded-lg overflow-hidden shadow-lg pt-10" variants={itemVariants}>
+        <iframe
+          src={mapa.src}
+          title={mapa.titulo}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </motion.div>
+    </motion.section>
+  );
 }
