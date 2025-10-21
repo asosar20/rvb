@@ -51,14 +51,14 @@ export default function AboutUs() {
                     <p className="text-[#101828] font-semibold mb-4">
                         <span className="font-bold">{horario.etiqueta}</span> {horario.valor}
                     </p>
-                    <Button variant="primary" href={telefono.numero}  className="flex items-center justify-center gap-2 w-fit">
+                    <Button variant="primary" href={telefono.numero}  className="flex items-center justify-center gap-2 lg:w-fit">
                         <Phone size={18} />
                         Llamar al: {telefono.numero}
                     </Button>
                 </div>
 
                 {/* TARJETAS */}
-                <div className="grid lg:grid-cols-2 gap-6 px-8 mt-16">
+                <div className="grid lg:grid-cols-2 gap-6 px-8 lg:mt-16">
                     {tarjetas.map((tarjeta) => (
                         <div
                             key={tarjeta.id}
