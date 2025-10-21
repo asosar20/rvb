@@ -36,7 +36,7 @@ const Banner = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-white text-base md:text-lg font-title pb-4"
+            className="text-[#ffffff] text-base md:text-lg font-title pb-4"
           >
             Recorre el proyecto con nosotros
           </motion.p>

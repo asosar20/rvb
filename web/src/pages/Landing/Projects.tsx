@@ -231,8 +231,8 @@ const Projects = () => {
               onClick={() => setTipoCasa(btn.id as "2pisos" | "1piso")}
               className={`border px-6 py-4 rounded-xl font-numbers transition-colors duration-300 cursor-pointer
                 ${tipoCasa === btn.id
-                  ? "bg-[#0F70B7] text-white border-[#0F70B7]"
-                  : "border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-white"}`}
+                  ? "bg-[#0F70B7] text-[#ffffff] border-[#0F70B7]"
+                  : "border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff]"}`}
             >
               {btn.label}
             </button>

@@ -102,7 +102,7 @@ const Features = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-8 text-center"
+                className="bg-[#ffffff] rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-8 text-center"
             >
               <motion.div
                 className="w-14 h-14 flex items-center justify-center bg-[#0F70B7] text-[#ffffff] rounded-full mx-auto mb-4 shadow"
