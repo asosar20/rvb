@@ -49,7 +49,7 @@ const Hero = () => {
             className="flex flex-col items-center justify-center bg-[#0F70B7] rounded-xl shadow-md p-2 text-center cursor-pointer"
           >
             <MapPin className="text-[#f3f4f6]" size={28} />
-            <span className="text-[#f3f4f6]">{dataHero.direccion}</span>
+            <span className="text-[#f3f4f6] text-sm">{dataHero.direccion}</span>
           </motion.div>
 
           {/* Área mínima */}
