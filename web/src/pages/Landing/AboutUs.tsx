@@ -1,6 +1,5 @@
 import { MapPinHouse, Building2, Phone, Map } from "lucide-react";
 import SubTitle from "../../components/SubTitle";
-import Button from "../../components/Button";
 const aboutUsData = {
   titulo: "Tu futuro hogar te espera aquí",
   horarioTexto: "Oficina de ventas de lunes a domingo.",
