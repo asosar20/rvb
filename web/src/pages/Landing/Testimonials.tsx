@@ -90,7 +90,7 @@ const Testimonials = () => {
                                     <img
                                         src={t.img}
                                         alt={t.nombre}
-                                        className="w-full -ml-3 h-64 lg:h-full object-cover rounded-lg shadow-lg"
+                                        className="w-full h-64 lg:h-full object-cover rounded-lg shadow-y-lg"
                                     />
                                 </div>
                             </div>
