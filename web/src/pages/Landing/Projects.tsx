@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 import {useRef, useState } from "react";
 import SubTitle from "../../components/SubTitle";
 import Button from "../../components/Button";
-
+import { motion, AnimatePresence } from "framer-motion";
 // Tipos base
 interface Imagen {
   src: string;
@@ -221,7 +221,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto pb-8 md:pb-0">
         <SubTitle>Nuestros proyectos</SubTitle>
 
-        <div className="flex justify-center gap-3 mb-6">
+        <div className="flex justify-center gap-3 mb-6 lg:py-4">
           {[
             { id: "2pisos", label: "Casa de 2 pisos" },
             { id: "1piso", label: "Casa de 1 piso" },
@@ -240,8 +240,16 @@ const Projects = () => {
         </div>
 
         {/* CASA DE 2 PISOS */}
+        <AnimatePresence mode="wait">
         {tipoCasa === "2pisos" && tipo2Pisos && (
-          <div className="flex flex-col md:flex-row justify-between gap-6">
+          <motion.div
+            key="2pisos"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="flex flex-col md:flex-row justify-between gap-6"
+          >
             <div className="flex-1 flex flex-col items-start gap-3 text-start">
               <span className="font-title font-bold text-2xl">{tipo2Pisos.titulo}</span>
               <span className="border-b w-full pb-4 text-[#364153] border-[#d1d5dc] font-title">
@@ -267,12 +275,19 @@ const Projects = () => {
               </div>
             </div>
             <TabsGaleriaCaracteristicas data={tipo2Pisos} tipoKey="2pisos" />
-          </div>
+          </motion.div>
         )}
 
         {/* CASA DE 1 PISO */}
         {tipoCasa === "1piso" && tipo1Piso && subtipoSeleccionado && (
-          <div className="flex flex-col gap-6">
+          <motion.div
+              key="1piso"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="flex flex-col gap-6"
+            >
             <div className="flex w-full justify-center">
               {tipo1Piso.subtipo?.map((st) => (
                 <div
@@ -317,8 +332,9 @@ const Projects = () => {
 
                             <TabsGaleriaCaracteristicas data={subtipoSeleccionado} tipoKey={`1piso-${subtipoSeleccionado.id}`} />
                         </div>
-                    </div>
+                    </motion.div>
                 )}
+                </AnimatePresence>
             </div>
         </section>
     )
