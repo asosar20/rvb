@@ -50,7 +50,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-8 lg:pt-8 pt-2 lg:pb-12 pb-12 lg:px-20 bg-[#ffffff]">
+    <section id="contact" data-aos="fade-up" className="px-8 lg:pt-8 pt-2 lg:pb-12 pb-12 lg:px-20 bg-[#ffffff]">
       <div className="max-w-7xl mx-auto text-center mb-10">
         <SubTitle>¡Quiero conocer más de Arena Blanca – Chiclayo!</SubTitle>
         <p className="text-[#364153] font-button">

@@ -2,7 +2,7 @@ import Button from "./Button"
 
 const Banner = () => {
     return (
-        <section
+        <section  data-aos="fade-up"
             className="bg-[#0F70B7] rounded-xl pt-16 text-white px-8 pb-16 md:pb-16 md:px-20 text-center"
         >
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">

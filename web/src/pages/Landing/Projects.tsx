@@ -217,7 +217,7 @@ const Projects = () => {
   const subtipoSeleccionado = tipo1Piso.subtipo?.find((s) => s.id === subtipo1Piso)!;
 
   return (
-    <section id="projects" ref={sectionRef} className="px-8 gap-8 lg:pt-8 pt-2 pb-12 text-center bg-[#ffffff]">
+    <section id="projects" data-aos="fade-up" ref={sectionRef} className="px-8 gap-8 lg:pt-8 pt-2 pb-12 text-center bg-[#ffffff]">
       <div className="max-w-7xl mx-auto pb-8 md:pb-0">
         <SubTitle>Nuestros proyectos</SubTitle>
 

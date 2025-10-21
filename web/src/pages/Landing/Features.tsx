@@ -71,7 +71,7 @@ const features = [
 const Features = () => {
     return (
         <section
-            id="features"
+            id="features" data-aos="fade-up"
             className="bg-[#F3F9F5] px-8 gap-8 lg:pt-8 pt-2 pb-12 text-center"
         >
             <div className="max-w-7xl mx-auto">

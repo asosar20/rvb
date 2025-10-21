@@ -57,7 +57,7 @@ const Testimonials = () => {
 
     return (
         <section
-            id="testimonials"
+            id="testimonials" data-aos="fade-up"
             className="px-8 lg:pt-8 pt-2 lg:pb-2 lg:px-20 bg-gradient-to-r from-[#F3F9F5] via-[#ffffff] to-[#EEF3FF]"
         >
             <div className="max-w-5xl mx-auto text-center lg:pb-0">

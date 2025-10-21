@@ -1,6 +1,5 @@
 // src/components/Button.tsx
 import type { ReactNode, MouseEventHandler } from "react";
-import { Link } from "react-router-dom";
 
 type ButtonProps = {
   children: ReactNode;
@@ -19,7 +18,7 @@ export default function Button({
   className = "",
   target
 }: ButtonProps) {
-  const baseStyles = "px-6 py-4 font-bold shadow-xl rounded-xl transition-transform duration-300 hover:scale-105 cursor-pointer";
+  const baseStyles = "inline-block px-6 py-4 font-bold shadow-xl rounded-xl transition-transform duration-300 hover:scale-105 cursor-pointer";
 
   const variants = {
     primary: "bg-[#0F70B7] text-[#f3f4f6]",
@@ -32,14 +31,14 @@ export default function Button({
   if (href) {
     const isExternal = href.startsWith("http");
     return (
-      <Link
-        to={href}
+      <a
+        href={href}
         className={finalClassName}
         target={target || (isExternal ? "_blank" : "_self")}
         rel={isExternal ? "noopener noreferrer" : undefined}
       >
         {children}
-      </Link>
+      </a>
     );
   }
 

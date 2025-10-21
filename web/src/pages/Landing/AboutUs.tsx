@@ -40,7 +40,7 @@ export default function AboutUs() {
     const { titulo, horarioTexto, horario, telefono, tarjetas, mapa } = aboutUsData;
 
     return (
-        <section id="aboutUs" className="bg-[#F4FAF7] lg:pt-12 pt-2 lg:pb-12 pb-12 text-center">
+        <section id="aboutUs" data-aos="fade-up" className="bg-[#F4FAF7] lg:pt-12 pt-2 lg:pb-12 pb-12 text-center">
             <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8">
                 {/* ENCABEZADO */}
                 <div className="text-center lg:text-left px-8 lg:px-0 flex flex-col justify-center">
@@ -51,10 +51,10 @@ export default function AboutUs() {
                     <p className="text-[#101828] font-semibold mb-4">
                         <span className="font-bold">{horario.etiqueta}</span> {horario.valor}
                     </p>
-                    <Button variant="primary" href={telefono.numero}  className="flex items-center font-numbers justify-center gap-2">
+                    <a className="flex items-center font-numbers justify-center gap-2 px-6 py-4 font-bold shadow-xl rounded-xl transition-transform duration-300 hover:scale-105 cursor-pointer bg-[#0F70B7] text-[#f3f4f6] lg:w-fit">
                         <Phone size={18} />
                         Llamar al: {telefono.numero}
-                    </Button>
+                    </a>
                 </div>
 
                 {/* TARJETAS */}
