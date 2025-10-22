@@ -331,7 +331,7 @@ const Projects = () => {
             <button
               key={btn.id}
               onClick={() => setTipoCasa(btn.id as "2pisos" | "1piso")}
-              className={`border px-6 py-4 rounded-xl font-numbers transition-colors duration-300 cursor-pointer
+              className={`border px-6 py-4 rounded-xl font-numbers transition-colors duration-300 cursor-pointer hover:scale-105 font-bold
                 ${
                   tipoCasa === btn.id
                     ? "bg-[#0F70B7] text-[#ffffff] border-[#0F70B7]"

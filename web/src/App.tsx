@@ -1,3 +1,4 @@
+// src/App.tsx
 import { BrowserRouter, useRoutes } from "react-router-dom";
 import { LandingRoutes } from "./routes/LandingRoutes";
 import { AdminRoutes } from "./routes/AdminRoutes";

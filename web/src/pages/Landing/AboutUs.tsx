@@ -114,7 +114,7 @@ export default function AboutUs() {
                 href={tarjeta.enlace}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff] px-4 py-2 rounded-md transition flex items-center gap-2 font-button"
+                className="border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff] px-4 py-2 rounded-md transition flex items-center gap-2 font-button hover:scale-105"
               >
                 <MapPinHouse className="w-5 h-5" />
                 {tarjeta.textoBoton}
