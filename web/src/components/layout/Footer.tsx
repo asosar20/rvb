@@ -5,7 +5,7 @@ import Button from "../Button";
 const companyName = "Constructora";
 const companyDescription =
   "Construimos hogares cerca del mar, combinando calidad, confort y confianza para toda tu familia.";
-  
+
 const socialLinks = [
   { icon: Facebook, href: "#", hoverClass: "hover:bg-[#4f39f6]" },
   { icon: Instagram, href: "#", hoverClass: "hover:bg-[#f6339a]" },
@@ -42,18 +42,20 @@ const Footer = () => {
 
         {/* Redes sociales */}
         <div className="flex flex-col gap-4 items-center">
-            <h4 className="font-semibold text-[#f3f4f6] text-lg text-center">Síguenos</h4>
-            <div className="flex gap-4">
-                {socialLinks.map(({ icon: Icon, href, hoverClass }, i) => (
-                    <a
-                    key={i}
-                    href={href}
-                    className={`w-10 h-10 flex items-center justify-center rounded-full bg-[#1e2939] transition transform hover:scale-105 ${hoverClass}`}
-                    >
-                    <Icon className="w-5 h-5 text-[#f3f4f6]" />
-                    </a>
-                ))}
-            </div>
+          <h4 className="font-semibold text-[#f3f4f6] text-lg text-center">
+            Síguenos
+          </h4>
+          <div className="flex gap-4">
+            {socialLinks.map(({ icon: Icon, href, hoverClass }, i) => (
+              <a
+                key={i}
+                href={href}
+                className={`w-10 h-10 flex items-center justify-center rounded-full bg-[#1e2939] transition transform hover:scale-105 ${hoverClass}`}
+              >
+                <Icon className="w-5 h-5 text-[#f3f4f6]" />
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Contacto */}
@@ -71,7 +73,9 @@ const Footer = () => {
           <h4 className="font-semibold text-[#f3f4f6] text-lg">
             Agenda tu visita
           </h4>
-          <Button href="#contact" className="font-button">Contáctanos</Button>
+          <Button href="#contact" className="font-button">
+            Contáctanos
+          </Button>
         </div>
       </div>
 

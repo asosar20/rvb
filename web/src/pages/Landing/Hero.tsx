@@ -13,7 +13,7 @@ const dataHero = {
 const Hero = () => {
   return (
     <section
-    //   data-aos="fade-up"
+      //   data-aos="fade-up"
       id="inicio"
       className="min-h-screen bg-[#F3F9F5] w-full flex lg:flex-row flex-col items-center justify-center px-8 gap-8 lg:pt-8 pt-10 pb-2"
     >

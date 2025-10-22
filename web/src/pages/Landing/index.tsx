@@ -20,12 +20,12 @@ export default function LandingPage() {
         <Projects />
       </section>
       <section>
-        <Banner/>
+        <Banner />
       </section>
       <section id="aboutUs">
         <AboutUs />
       </section>
-       <section id="testimonials">
+      <section id="testimonials">
         <Testimonials />
       </section>
       <section id="contact">

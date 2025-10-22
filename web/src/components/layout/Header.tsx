@@ -16,7 +16,8 @@ const Header = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const classNav = "hover:bg-[#0F70B7] hover:px-4 hover:py-2 hover:rounded-bl-xl hover:rounded-tr-xl hover:text-[#f3f4f6] transition-all duration-300";
+  const classNav =
+    "hover:bg-[#0F70B7] hover:px-4 hover:py-2 hover:rounded-bl-xl hover:rounded-tr-xl hover:text-[#f3f4f6] transition-all duration-300";
 
   return (
     <header className="fixed top-0 left-0 w-full bg-[#f3f4f6] shadow-md z-50">
@@ -29,7 +30,9 @@ const Header = () => {
             loading="lazy"
             className="h-10"
           />
-          <span className="font-bold text-xl text-[#101828] uppercase">Constructora</span>
+          <span className="font-bold text-xl text-[#101828] uppercase">
+            Constructora
+          </span>
         </a>
 
         {/* Desktop nav */}

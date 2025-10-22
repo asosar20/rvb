@@ -16,14 +16,16 @@ export default function Button({
   onClick,
   variant = "primary",
   className = "",
-  target
+  target,
 }: ButtonProps) {
-  const baseStyles = "inline-block px-6 py-4 font-bold shadow-xl rounded-xl transition-transform duration-300 hover:scale-105 cursor-pointer";
+  const baseStyles =
+    "inline-block px-6 py-4 font-bold shadow-xl rounded-xl transition-transform duration-300 hover:scale-105 cursor-pointer";
 
   const variants = {
     primary: "bg-[#0F70B7] text-[#f3f4f6]",
     secondary: "bg-[#F6B800] text-[#f3f4f6]",
-    outline: "border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff]",
+    outline:
+      "border border-[#0F70B7] text-[#0F70B7] hover:bg-[#0F70B7] hover:text-[#ffffff]",
   };
 
   const finalClassName = `${baseStyles} ${variants[variant]} ${className}`;

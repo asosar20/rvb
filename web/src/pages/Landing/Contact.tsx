@@ -11,16 +11,30 @@ import { motion } from "framer-motion";
 // Esquema Zod
 const contactSchema = z.object({
   nombre: z.string().min(3, "El nombre debe tener al menos 3 caracteres"),
-  telefono: z.string().regex(/^(?:\+51\s?)?9\d{8}$/, "Debe ser válido (ej: +51 9XXXXXXXX o 9XXXXXXXX)"),
+  telefono: z
+    .string()
+    .regex(
+      /^(?:\+51\s?)?9\d{8}$/,
+      "Debe ser válido (ej: +51 9XXXXXXXX o 9XXXXXXXX)"
+    ),
   dni: z.string().regex(/^\d{8}$/, "Debe tener 8 dígitos"),
-  correo: z.string().email("El correo debe ser válido").optional().or(z.literal("")),
+  correo: z
+    .string()
+    .email("El correo debe ser válido")
+    .optional()
+    .or(z.literal("")),
 });
 
 type ContactForm = z.infer<typeof contactSchema>;
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactForm>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
   });
 
@@ -37,7 +51,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" data-aos="fade-up" className="px-8 lg:pt-8 pt-2 lg:pb-12 pb-12 lg:px-20 bg-[#ffffff]">
+    <section
+      id="contact"
+      data-aos="fade-up"
+      className="px-8 lg:pt-8 pt-2 lg:pb-12 pb-12 lg:px-20 bg-[#ffffff]"
+    >
       {/* Título */}
       <motion.div
         className="max-w-7xl mx-auto text-center mb-10"
@@ -61,7 +79,10 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 text-left">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-5 text-left"
+          >
             <div>
               <label className="text-sm text-[#364153] font-semibold">
                 NOMBRES Y APELLIDOS <span className="text-[#fb2c36]">*</span>
@@ -71,7 +92,11 @@ export default function Contact() {
                 className="w-full mt-1 p-3 border border-[#d1d5db] rounded-lg text-[#101828] focus:ring-2 focus:ring-[#0F70B7] outline-none"
                 placeholder="Ej. Juan Pérez"
               />
-              {errors.nombre && <p className="text-[#fb2c36] text-xs mt-1">{errors.nombre.message}</p>}
+              {errors.nombre && (
+                <p className="text-[#fb2c36] text-xs mt-1">
+                  {errors.nombre.message}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col lg:flex-row gap-4">
@@ -85,7 +110,11 @@ export default function Contact() {
                   className="w-full mt-1 p-3 border border-[#d1d5db] rounded-lg text-[#101828] focus:ring-2 focus:ring-[#0F70B7] outline-none"
                   placeholder="9XXXXXXXX"
                 />
-                {errors.telefono && <p className="text-[#fb2c36] text-xs mt-1">{errors.telefono.message}</p>}
+                {errors.telefono && (
+                  <p className="text-[#fb2c36] text-xs mt-1">
+                    {errors.telefono.message}
+                  </p>
+                )}
               </div>
 
               <div className="flex-1">
@@ -98,18 +127,28 @@ export default function Contact() {
                   className="w-full mt-1 p-3 border border-[#d1d5db] rounded-lg text-[#101828] focus:ring-2 focus:ring-[#0F70B7] outline-none"
                   placeholder="8 dígitos"
                 />
-                {errors.dni && <p className="text-[#fb2c36] text-xs mt-1">{errors.dni.message}</p>}
+                {errors.dni && (
+                  <p className="text-[#fb2c36] text-xs mt-1">
+                    {errors.dni.message}
+                  </p>
+                )}
               </div>
             </div>
 
             <div>
-              <label className="text-sm text-[#364153] font-semibold">EMAIL (opcional)</label>
+              <label className="text-sm text-[#364153] font-semibold">
+                EMAIL (opcional)
+              </label>
               <input
                 {...register("correo")}
                 className="w-full mt-1 p-3 border border-[#d1d5db] rounded-lg text-[#101828] focus:ring-2 focus:ring-[#0F70B7] outline-none"
                 placeholder="ejemplo@correo.com"
               />
-              {errors.correo && <p className="text-[#fb2c36] text-xs mt-1">{errors.correo.message}</p>}
+              {errors.correo && (
+                <p className="text-[#fb2c36] text-xs mt-1">
+                  {errors.correo.message}
+                </p>
+              )}
             </div>
 
             <div className="flex justify-center mt-6">
@@ -139,11 +178,21 @@ export default function Contact() {
             Nuestro Proyecto Estrella: Arena Blanca
           </h3>
           <p className="text-[#364153] text-sm lg:text-base leading-relaxed text-start">
-            Arena Blanca es nuestro proyecto más ambicioso y con mayor proyección. Ubicado a solo
-            minutos de Pimentel, combina <span className="font-semibold">naturaleza, recreación y plusvalía</span> en un solo lugar.
+            Arena Blanca es nuestro proyecto más ambicioso y con mayor
+            proyección. Ubicado a solo minutos de Pimentel, combina{" "}
+            <span className="font-semibold">
+              naturaleza, recreación y plusvalía
+            </span>{" "}
+            en un solo lugar.
           </p>
           <p className="text-[#364153] text-sm lg:text-base leading-relaxed text-start">
-            Disfruta de <span className="font-semibold">parques, áreas deportivas y espacios para toda la familia</span>, diseñados para brindar confort y calidad de vida. Su planificación moderna lo convierte en una <span className="font-semibold">excelente inversión</span>.
+            Disfruta de{" "}
+            <span className="font-semibold">
+              parques, áreas deportivas y espacios para toda la familia
+            </span>
+            , diseñados para brindar confort y calidad de vida. Su planificación
+            moderna lo convierte en una{" "}
+            <span className="font-semibold">excelente inversión</span>.
           </p>
         </motion.div>
       </div>

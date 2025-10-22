@@ -91,7 +91,9 @@ const Testimonials = () => {
                 <p className="font-semibold text-[#0F70B7] text-lg">
                   {testimonialsData[current].nombre}
                 </p>
-                <p className="text-[#6a7282]">{testimonialsData[current].lugar}</p>
+                <p className="text-[#6a7282]">
+                  {testimonialsData[current].lugar}
+                </p>
               </div>
 
               {/* Imagen */}
